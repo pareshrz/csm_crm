@@ -39,11 +39,11 @@ class VendorController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
+        $attributes = request()->validate([
             'name' => 'required|min:4|max:255',
             'title' => 'required|min:5|max:255',
             'street_address' => 'required|min:5:max:1000',
-            'appartment' => 'required|min:3|max:255',
+            'apartment' => 'required|min:3|max:255',
             'city' => 'required|min:5|max:255',
             'state' => 'required|min:5|max:255',
             'zip' => 'required|min:5|max:15',
@@ -54,8 +54,15 @@ class VendorController extends Controller
             'email' => 'min:5|max:255|email',
             'aadhar_id' => 'required|digits:12',
             'birth_date' => 'required|date',
-            'married' => 'required'
+            'married' => 'required',
+            'work_location' => 'nullable|min:5|max:255',
+            'vendor_id' => 'required|digits_between:4,10',
+            'department' => 'required|min:5|max:255',
+            'start_date' => 'required|date',
+            'experience' => 'nullable|min:5|max:255'
         ]);
+        Vendor::create($attributes);
+        return redirect('/vendors');
     }
 
     /**

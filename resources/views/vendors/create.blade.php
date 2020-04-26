@@ -24,8 +24,8 @@
 					<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="street_address" value="{{old('street_address')}}">
 				</div>
 				<div class="form-group">
-					<label for="inputAddress">Appartment/Unit#</label>
-					<input type="text" class="form-control" id="appartment" placeholder="Apartment No." name="appartment" value="{{old('appartment')}}">
+					<label for="Apartment">Apartment/Unit#</label>
+					<input type="text" class="form-control" id="apartment" placeholder="Apartment No." name="apartment" value="{{old('apartment')}}">
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-4">
