@@ -44,15 +44,15 @@
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="Phone">Phone</label>
-						<input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" value="{{old('phone')}}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+						<input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" value="{{old('phone')}}">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="HomePhone">Home Phone</label>
-						<input type="tel" class="form-control" id="home_phone" name="home_phone" placeholder="HomePhone" value="{{old('home_phone')}}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+						<input type="tel" class="form-control" id="home_phone" name="home_phone" placeholder="HomePhone" value="{{old('home_phone')}}">
 					</div>
 					<div class="form-group col-md-4">
 						<label for="WorkPhone">Work Phone</label>
-						<input type="tel" class="form-control" id="work_phone" name="work_phone" placeholder="Work Phone" value="{{old('work_phone')}}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+						<input type="tel" class="form-control" id="work_phone" name="work_phone" placeholder="Work Phone" value="{{old('work_phone')}}">
 					</div>
 				</div>
 				<div class="form-row">
@@ -73,10 +73,10 @@
 					<div class="form-group col-md-4">
 						<p>Marital Status</p>
 						<div class="pl-3">
-							<input type="radio" name="married" value="1" class="">
+							<input type="radio" name="married" value="1" class="" {{old('married') == '1' ? 'checked' : ""}}>
 							<label for="married">Married</label>
 							<br>
-							<input type="radio" name="married" value="0" class="">
+							<input type="radio" name="married" value="0" class="" {{old('married') == '0' ? 'checked' : ""}}>
 							<label for="married">Unmarried</label>
 						</div>
 					</div>

@@ -40,20 +40,21 @@ class VendorController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'name' => 'required|min:5|max:255',
+            'name' => 'required|min:4|max:255',
             'title' => 'required|min:5|max:255',
             'street_address' => 'required|min:5:max:1000',
             'appartment' => 'required|min:3|max:255',
             'city' => 'required|min:5|max:255',
             'state' => 'required|min:5|max:255',
             'zip' => 'required|min:5|max:15',
-            'phone' => 'required|min:10|max:11|numeric',
-            'home_phone' => 'min:10|max:11|numeric',
-            'alternate_phone' => 'min:10|max:11|numeric',
-            'work_phone' => 'min:10|max:11|numeric',
+            'phone' => 'required|digits_between:10,11',
+            'home_phone' => 'nullable|digits_between:10,11',
+            'alternate_phone' => 'nullable|digits_between:10,11',
+            'work_phone' => 'nullable|digits_between:10,11',
             'email' => 'min:5|max:255|email',
-            'aadhar_id' => 'required|min:5|max:255',
-            'birth_date' => 'required|date'
+            'aadhar_id' => 'required|digits:12',
+            'birth_date' => 'required|date',
+            'married' => 'required'
         ]);
     }
 
