@@ -13,7 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div><a class="btn btn-primary" href="/vendors/create">Add New Vendor</a></div>
+                    <div>
+                        <a class="btn btn-primary" href="/vendors/create">Add New Vendor</a>
+                        <a class="btn btn-danger" href="/vendors">List All Vendors</a>
+                    </div>
                 </div>
             </div>
         </div>
