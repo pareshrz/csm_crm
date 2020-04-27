@@ -19,7 +19,7 @@ Route::get('/home', function(){
 	return redirect('/dashboard');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::resource('vendors', 'VendorController');
 
