@@ -10,10 +10,9 @@
 		      <th scope="col">Name</th>
 		      <th scope="col">Phone</th>
 		      <th scope="col">Department</th>
-		      <th scope="col">Email</th>
-		      <th scope="col">Address</th>
 		      <th scope="col">Title</th>
-		      <th scope="col">Street Address</th>
+		  
+		      <th>View Details</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -22,10 +21,8 @@
 		    	  <td> {{$vendor->name}} </td>
 		    	  <td>{{$vendor->phone}}</td>
 		    	  <td>{{$vendor->department}}</td>
-		    	  <td>{{$vendor->email}}</td>
-		    	  <td>{{$vendor->street_address}}</td>
-		    	  <td>{{$vendor->title}}</td>
-		    	  <td>{{$vendor->street_address}}</td>
+	    		  <td>{{$vendor->title}}</td>
+	    		  <td><a href="/vendors/{{$vendor->id}}" class="btn btn-info">View Details</a></td>
 		    	</tr>
 		    @endforeach
 		  </tbody>

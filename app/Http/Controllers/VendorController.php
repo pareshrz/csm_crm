@@ -73,7 +73,7 @@ class VendorController extends Controller
      */
     public function show(Vendor $vendor)
     {
-        //
+        return view('vendors.show')->withVendor($vendor);
     }
 
     /**
@@ -84,7 +84,7 @@ class VendorController extends Controller
      */
     public function edit(Vendor $vendor)
     {
-        //
+        return view('vendors.edit')->withVendor($vendor);
     }
 
     /**
@@ -96,7 +96,30 @@ class VendorController extends Controller
      */
     public function update(Request $request, Vendor $vendor)
     {
-        //
+        $attributes = request()->validate([
+            'name' => 'required|min:4|max:255',
+            'title' => 'required|min:5|max:255',
+            'street_address' => 'required|min:5:max:1000',
+            'apartment' => 'required|min:3|max:255',
+            'city' => 'required|min:5|max:255', 
+            'state' => 'required|min:5|max:255',
+            'zip' => 'required|min:5|max:15',
+            'phone' => 'required|digits_between:10,11',
+            'home_phone' => 'nullable|digits_between:10,11',
+            'alternate_phone' => 'nullable|digits_between:10,11',
+            'work_phone' => 'nullable|digits_between:10,11',
+            'email' => 'min:5|max:255|email',
+            'aadhar_id' => 'required|digits:12',
+            'birth_date' => 'required|date',
+            'married' => 'required',
+            'work_location' => 'nullable|min:5|max:255',
+            'vendor_id' => 'required|digits_between:4,10',
+            'department' => 'required|min:5|max:255',
+            'start_date' => 'required|date',
+            'experience' => 'nullable|min:5|max:255'
+        ]);
+        $vendor->update($attributes);
+        return redirect('/vendors/' . $vendor->id);
     }
 
     /**
