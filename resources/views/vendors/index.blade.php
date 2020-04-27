@@ -4,7 +4,6 @@
 <div class="row justify-content-center">
 	<div class="table-responsive">
 		<table class="table table-dark">
-		  <caption>List of vendors</caption>
 		  <thead class="thread-dark">
 		    <tr>
 		      <th scope="col">Name</th>
